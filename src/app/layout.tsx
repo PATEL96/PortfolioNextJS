@@ -1,5 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import Navbar from '@/Components/Navbar/page'
+import 'react-vertical-timeline-component/style.min.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='Nav'>
+          <Navbar />
+        </div>
+        {children}
+      </body>
     </html>
   )
 }

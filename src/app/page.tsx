@@ -1,95 +1,50 @@
-import Image from 'next/image'
+// import './Home.css'
+import React from 'react';
 import styles from './page.module.css'
+import Bg from '../Images/black-13495.gif'
+import Profile from '../Images/ProfileMain.jpeg'
+import { Typewriter } from 'nextjs-simple-typewriter'
+import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@/Components/Navbar/page'
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+	return(
+		<>
+		<div className={styles.Home}>
+			<div className={styles.Data}>
+				<div className={styles.Name_container}>
+					Hi 👋, I'm <div className={styles.Name}>Raj <span style={{color: "#40f100"}}>D</span>. Patel</div>
+				</div>
+				<div style={{display: 'flex',width:"90%"}}>
+					<div style={{paddingRight: "8px"}}>
+						I'm A
+					</div>
+          			<div className={styles.Typer}>
+            			<Typewriter
+            				words={['Student.', 'Web Developer.', 'Blockchain Dev.', 'Youtuber.', 'Gamer.']}
+            				loop={0}
+							cursorBlinking
+            				cursor
+			        	    cursorStyle='|'
+        				    typeSpeed={100}
+            				deleteSpeed={60}
+            				delaySpeed={1500}
+          				/>
+          			</div>
+				</div>
+				<div className={styles.more_container}>
+					<Link href="/About" className={styles.more} >Learn More...</Link>
+				</div>
+			</div>
+			<div className={styles.bg}>
+				<Image src={Bg} alt='none' />
+			</div>
+			<div className={styles.profile_pic}>
+				<Image src={Profile} alt="none" />
+			</div>
+		</div>
+		</>
+	);
 }

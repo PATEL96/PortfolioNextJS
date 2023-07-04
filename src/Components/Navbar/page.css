@@ -1,0 +1,173 @@
+@font-face{
+	font-family: "Caesar";
+	src: url('../../Fonts/Exo2-VariableFont_wght.ttf') format(truetype);
+	font-weight: 400;
+}
+
+.Navbar{
+	position: sticky;
+	top: 0;
+	z-index: 400;
+	font-family: 'Caesar';
+	font-size: 30px;
+	font-weight: 800px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10vh;
+	color: black;
+	background-color: aliceblue;
+	position: sticky;
+}
+
+.NavContentL{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	left: 6px;
+}
+
+.mobile-toggle{
+	display: none;
+}
+
+@keyframes slick{
+	0%,100%{
+		border-radius: 40% 60% 70% 30%/40% 40% 60% 50%;
+	}
+	34%{
+		border-radius: 70% 30% 50% 50%/30% 30% 70% 70%;
+	}
+	67%{
+		border-radius: 100% 60% 60% 100%/100% 100% 60% 60%;
+	}
+}
+
+.Logo{
+	height: 8.5vh;
+	width: 100%;
+	aspect-ratio: 1/1;
+	margin: 0;
+	border-radius: 50%;
+	animation: slick 20s linear infinite;
+}
+
+.NavContentR{
+	position: absolute;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 600px;
+}
+
+.NavContentR:hover > .NavLink{
+	color: gray;
+}
+
+.home:hover, .projects:hover, .about:hover{
+	color: black;
+}
+
+.NavLink{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: black;
+	font-weight: 800;
+}
+
+.home  hr {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	border: 0;
+	width: 0%;
+	border-bottom: 2.5px solid black;
+	transition: width 0.3s ease-out;
+}
+
+.home:hover hr {
+	width: 55%;
+	transition: width 0.3s ease-out;
+}
+.projects  hr {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	border: 0;
+	width: 0%;
+	border-bottom: 2.5px solid black;
+	transition: width 0.3s ease-out;
+}
+
+.projects:hover hr {
+	width: 55%;
+	transition: width 0.3s ease-out;
+}
+.about  hr {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	width: 0%;
+	border-bottom: 2.5px solid black;
+	transition: width 0.3s ease-out;
+}
+
+.about:hover hr {
+	width: 55%;
+	transition: width 0.3s ease-out;
+}
+
+.mobile-toggle>div{
+	width: 2.3rem;
+	height:  0.2rem;
+	margin: 0.4rem;
+	background-color: black;
+	transition: 0.4s ease-in;
+}
+
+.mobile-toggle{
+	cursor: pointer;
+	display: none;
+}
+
+@media screen and (max-width: 1250px) {
+	.NavContentR{
+		position: absolute;
+		top: 10vh;
+		background-color: aliceblue;
+		flex-direction: column;
+		width: 40%;
+		justify-content: flex-start;
+		height: 90vh;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		transform: translateX(100%);
+		transition: 0.5s ease-in;
+	}
+
+	.menu, .close{
+		transform: scale(2);
+	}
+	
+	.mobile-toggle{
+		display: block;
+		cursor: pointer;
+		position: absolute;
+		right: 5%;
+		display: block;
+		font-size: larger;
+	}
+
+	.home, .about, .projects{
+		padding: 20px;
+	}
+
+}
+.NavContentActive{
+	transform: translateX(0);
+}
